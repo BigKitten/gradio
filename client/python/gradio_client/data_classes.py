@@ -1,13 +1,11 @@
 from __future__ import annotations
 
-from typing_extensions import NotRequired, TypedDict
+from typing import Optional, Union, TypedDict
 
 
 class FileData(TypedDict):
-    name: str | None  # filename
-    data: str | None  # base64 encoded data
-    size: NotRequired[int | None]  # size in bytes
-    is_file: NotRequired[
-        bool
-    ]  # whether the data corresponds to a file or base64 encoded data
-    orig_name: NotRequired[str]  # original filename
+    name: Optional[str]  # filename
+    data: Optional[str]  # base64 encoded data
+    size: Optional[Union[int, None]]  # size in bytes
+    is_file: Optional[bool]  # whether the data corresponds to a file or base64 encoded data
+    orig_name: Optional[str]  # original filename
